@@ -1,3 +1,21 @@
+> [!WARNING]
+> **This is a temporary community fix, not the official package.**
+>
+> This fork exists solely to work around a YAML formatting bug in the upstream
+> `Unity-Technologies/skills` repository that causes `npx skills add` to fail
+> with a "Nested mappings are not allowed in compact mappings" parse error.
+>
+> **This repository is not maintained and will not be kept in sync with the
+> upstream package.** It may fall behind on new skills, updates, and bug fixes.
+> Once the issue is resolved upstream, please switch back to the official
+> package:
+>
+> ```bash
+> npx skills add Unity-Technologies/skills
+> ```
+>
+> If the upstream fix has already landed, you should not use this fork.
+
 # Unity Skills
 
 A collection of reusable AI agent skills for Unity workflows. Compatible with Claude Code, GitHub Copilot, Cursor, Cline, and [50+ other agents](https://skills.sh).
@@ -5,7 +23,7 @@ A collection of reusable AI agent skills for Unity workflows. Compatible with Cl
 ## Install
 
 ```bash
-npx skills add Unity-Technologies/skills
+npx skills add Combinesoldier1337/unity-skills-yaml-parse-fix
 ```
 
 ## Available skills

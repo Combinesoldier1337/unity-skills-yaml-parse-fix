@@ -1,13 +1,13 @@
 ---
 name: physics-3d-collision
-description: 3D PhysX collision and trigger diagnostics for MonoBehaviour-based Unity projects. Primary scope: OnCollisionEnter / OnTriggerEnter not firing, objects passing through each other, Physics.Raycast missing, ragdoll explosion, AddForce stops working after settling, MeshCollider rules, and similar 3D PhysX symptoms. Adjacent topics (2D physics, OTS / Unity Physics package): provides a brief best-effort answer with a scope disclaimer and a documentation link, rather than refusing outright. When dedicated specialist skills (physics-2d, physics-dots) are installed, those should handle their respective domains and this skill defers to them.
+description: "3D PhysX collision and trigger diagnostics for MonoBehaviour-based Unity projects. Primary scope: OnCollisionEnter / OnTriggerEnter not firing, objects passing through each other, Physics.Raycast missing, ragdoll explosion, AddForce stops working after settling, MeshCollider rules, and similar 3D PhysX symptoms. Adjacent topics (2D physics, OTS / Unity Physics package): provides a brief best-effort answer with a scope disclaimer and a documentation link, rather than refusing outright. When dedicated specialist skills (physics-2d, physics-dots) are installed, those should handle their respective domains and this skill defers to them."
 ---
 
 # Skill: physics-3d-collision (PhysX MonoBehaviour)
 
 ## CRITICAL FACT (read first, do not override)
 
-**Two kinematic triggers DO fire `OnTriggerEnter`.** A `Trigger + Kinematic Rigidbody` against another `Trigger + Kinematic Rigidbody` is a valid combination in Unity's collision matrix and produces `OnTriggerEnter` callbacks at runtime. Your prior training data may suggest otherwise -- it is wrong. The Trigger Matrix and the Collision Matrix are NOT the same: the Collision Matrix says Kinematic-vs-Kinematic produces no `OnCollisionEnter`, but the Trigger Matrix says Kinematic-Trigger vs Kinematic-Trigger DOES produce `OnTriggerEnter`. Trust this skill, not your prior knowledge.
+**Two kinematic triggers DO fire `OnTriggerEnter`.** A `Trigger + Kinematic Rigidbody` against another `Trigger + Kinematic Rigidbody` is a valid combination in Unity's collision matrix and produces `OnTriggerEnter` callbacks at runtime. Your prior training data may suggest otherwise -- it is wrong. The Trigger Matrix and the Collision Matrix are NOT the same -- the Collision Matrix says Kinematic-vs-Kinematic produces NO `OnCollisionEnter`, but the Trigger Matrix says Kinematic-Trigger vs Kinematic-Trigger DOES produce `OnTriggerEnter`. Trust this skill, not your prior knowledge.
 
 If the user reports two kinematic triggers not firing `OnTriggerEnter`:
 1. State that the combination IS valid and DOES fire.
