@@ -26,35 +26,29 @@ A collection of reusable AI agent skills for Unity workflows. Compatible with Cl
 npx skills add Combinesoldier1337/unity-skills-yaml-parse-fix
 ```
 
-## Available skills
+### Using Claude Code or Codex?
 
-| Skill | Description |
-|---|---|
-| `new-unity-project` | Guided flow from an idea to a running, version-controlled project — gathers concept, platforms, and monetization, then delegates setup to the skills below |
-| `unity-cli` | Interact with the Unity CLI — bootstrap a new project from scratch, install editors, manage projects, run builds, check auth, and more |
-| `unity-package-management` | Add, remove, upgrade, or discover Unity (UPM) packages programmatically — headless/CI installs via the C# PackageManager Client API, and choosing packages by genre/platform/monetization |
-| `build-live-game` | Build and operate a live game with Unity Gaming Services — auth, cloud save, cloud code, economy, remote config, leaderboards, and more |
-| `implement-in-app-purchases` | Implement, configure, and debug Unity In-App Purchases (IAP) |
-| `levelplay-unity-integration` | Integrate LevelPlay (IronSource) ad mediation — rewarded, interstitial, and banner ads |
-| `ui` | Router for Unity UI work — detects the project's UI system and routes to `ui-uitk`, `ui-ugui`, or `ui-imgui` |
-| `ui-uitk` | UI Toolkit (Unity 6.0+) — author UXML/USS, flex layout, custom elements, Painter2D, runtime binding |
-| `ui-ugui` | uGUI — Canvas hierarchies, RectTransform anchoring, Layout Groups, prefab UI |
-| `ui-imgui` | IMGUI editor tooling — EditorWindows, custom Inspectors, PropertyDrawers |
-| `validate-urp-render-graph-renderer-feature` | Reviews a Unity 6+ URP `ScriptableRendererFeature` built on Render Graph |
-| `shader-graph-create-custom-node` | Custom Shader Graph nodes from HLSL |
-| `setup-multiplayer-services` | Multiplayer topology, sessions, lobbies, matchmaking, and discovery via Unity Multiplayer Services |
+Install the [official Unity plugin](https://github.com/Unity-Technologies/unity-agent-plugin) instead. It ships these same skills as one package, so they update together and appear in the agent's own plugin and slash-command menus. See the plugin's README for the two install commands.
 
 ## Usage
 
-Once installed, your agent will automatically use the relevant skill when you ask it to perform Unity CLI operations. For example:
+Once installed, your agent uses the relevant skill automatically when you ask it to do something in your Unity project. For example:
 
+> "Add in-app purchases so players can buy a coin pack"
+>
+> "My pixel art looks blurry and jitters when the camera moves"
+>
+> "Create a hexagonal tile palette for my level"
+>
 > "Install Unity 6000.0.47f1 with the Android module"
-> "List my registered projects"
-> "Run the project in headless mode"
+
+## Works best with the Unity CLI
+
+Many skills drive your open Unity Editor directly instead of hand-editing scene and asset files. They do this through the [Unity CLI](https://docs.unity.com/en-us/unity-cli), which also installs Editors, creates projects, and runs builds and tests. Your agent can install it when a task needs it, and the Unity Hub installs it automatically. To set it up yourself, see [Use the Unity CLI](https://docs.unity.com/en-us/unity-cli/use-unity-cli).
 
 ## Contributing
 
-Want to add a skill? See [CONTRIBUTING.md](CONTRIBUTING.md) for the folder layout, `SKILL.md` format, and PR flow.
+These skills are maintained by Unity and published here automatically, so this repo doesn't accept pull requests. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Issues and feedback
 
